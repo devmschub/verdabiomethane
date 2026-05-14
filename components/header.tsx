@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -21,12 +22,18 @@ export function Header() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">V</span>
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/verda-logo.png"
+              alt="VERDA BIOMETHANE"
+              width={44}
+              height={44}
+              className="h-9 w-9 md:h-11 md:w-11 object-contain shrink-0"
+              priority
+            />
             <span className="font-semibold text-lg tracking-tight">
-              VERDA <span className="text-primary">BIOMETHANE</span>
+              <span className="text-[#0F5832]">VERDA</span>{" "}
+              <span className="text-[#018CEB]">BIOMETHANE</span>
             </span>
           </Link>
 

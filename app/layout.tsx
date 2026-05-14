@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description: 'Projeto greenfield de produção de biometano em larga escala a partir de resíduos de frigoríficos. CAPEX US$ 260 milhões | Capacidade 30 milhões Nm³/ano | TIR 20.5%',
   keywords: ['biometano', 'energia renovável', 'investimento', 'Mato Grosso', 'ESG', 'sustentabilidade', 'biocombustível'],
   authors: [{ name: 'Invest Mato Grosso' }],
+  icons: {
+    icon: [{ url: '/favicon.png', sizes: '32x32', type: 'image/png' }],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'VERDA BIOMETHANE | Maior Plataforma de Biometano do Brasil',
     description: 'A maior plataforma de biometano de origem agropecuária da América Latina',
