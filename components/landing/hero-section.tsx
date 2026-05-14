@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight, TrendingUp, Globe, Leaf, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { WHATSAPP_URL } from "@/lib/whatsapp"
 
 export function HeroSection() {
   return (
@@ -61,8 +62,10 @@ export function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Agendar Reunião
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                Agendar Reunião
+              </a>
             </Button>
           </motion.div>
         </div>
@@ -122,19 +125,18 @@ export function HeroSection() {
           ))}
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex flex-col sm:flex-row gap-4 mt-12"
+          className="mt-12"
         >
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
-            Solicitar Investment Memorandum
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button size="lg" variant="outline" className="border-card/30 text-card bg-transparent hover:bg-card hover:text-foreground transition-colors">
-            Assistir Apresentação
+          <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              Solicitar Investment Memorandum
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
           </Button>
         </motion.div>
 

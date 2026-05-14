@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { ArrowRight, Calendar, FileText, Mail, Linkedin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { WHATSAPP_URL } from "@/lib/whatsapp"
 import { Input } from "@/components/ui/input"
 
 export function ContactSection() {
@@ -77,6 +78,7 @@ export function ContactSection() {
                 {card.description}
               </p>
               <Button
+                asChild
                 variant="secondary"
                 className={
                   card.primary
@@ -84,8 +86,10 @@ export function ContactSection() {
                     : 'bg-white text-neutral-950 hover:bg-neutral-100 border border-white/25 shadow-xs'
                 }
               >
-                {card.action}
-                <ArrowRight className="ml-2 w-4 h-4" />
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  {card.action}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
               </Button>
             </div>
           ))}
