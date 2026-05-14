@@ -1,25 +1,20 @@
-import { Header } from "@/components/header"
-import { HeroSection } from "@/components/hero-section"
-import { OpportunitySection } from "@/components/opportunity-section"
-import { SpecsSection } from "@/components/specs-section"
-import { MarketSection } from "@/components/market-section"
-import { FinancialSection } from "@/components/financial-section"
-import { ESGSection } from "@/components/esg-section"
-import { InvestorsSection } from "@/components/investors-section"
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
+import { HeroSection } from "@/components/landing/hero-section"
+import { OpportunitySection } from "@/components/landing/opportunity-section"
+import { FinancialSection } from "@/components/landing/financial-section"
+import { TechnologySection } from "@/components/landing/technology-section"
+import { PartnersSection } from "@/components/landing/partners-section"
+import { ImpactSection } from "@/components/landing/impact-section"
+import { ContactSection, Footer } from "@/components/landing/contact-section"
 
-export default function Home() {
+export default function VerdaBiomethaneLanding() {
   return (
     <main className="min-h-screen">
-      <Header />
       <HeroSection />
       <OpportunitySection />
-      <SpecsSection />
-      <MarketSection />
+      <PartnersSection />
       <FinancialSection />
-      <ESGSection />
-      <InvestorsSection />
+      <TechnologySection />
+      <ImpactSection />
       <ContactSection />
       <Footer />
     </main>

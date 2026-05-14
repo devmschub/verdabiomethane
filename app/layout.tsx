@@ -1,32 +1,39 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const geist = Geist({ 
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap"
-})
+  variable: '--font-geist'
+});
+
+const geistMono = Geist_Mono({ 
+  subsets: ["latin"],
+  variable: '--font-geist-mono'
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-cormorant'
+});
 
 export const metadata: Metadata = {
-  title: 'VERDA BIOMETHANE | Maior Plataforma de Biometano do Brasil',
-  description: 'Projeto greenfield de produção de biometano em larga escala a partir de resíduos de frigoríficos. CAPEX US$ 260 milhões | Capacidade 30 milhões Nm³/ano | TIR 20.5%',
-  keywords: ['biometano', 'energia renovável', 'investimento', 'Mato Grosso', 'ESG', 'sustentabilidade', 'biocombustível'],
-  authors: [{ name: 'Invest Mato Grosso' }],
-  icons: {
-    icon: [{ url: '/favicon.png', sizes: '32x32', type: 'image/png' }],
-    apple: '/apple-touch-icon.png',
-  },
+  title: 'VERDA BIOMETHANE | A Maior Plataforma de Biometano da América Latina',
+  description: 'Oportunidade de investimento de US$ 260 milhões em energia renovável. TIR de 20.5%, produção de 30 milhões Nm³/ano de biometano em Mato Grosso, Brasil.',
+  keywords: ['biometano', 'energia renovável', 'investimento', 'Brasil', 'ESG', 'bioenergia', 'Mato Grosso'],
+  authors: [{ name: 'VERDA BIOMETHANE' }],
   openGraph: {
-    title: 'VERDA BIOMETHANE | Maior Plataforma de Biometano do Brasil',
-    description: 'A maior plataforma de biometano de origem agropecuária da América Latina',
+    title: 'VERDA BIOMETHANE | Investment Opportunity',
+    description: 'Brazil\'s Largest Slaughterhouse-to-Biomethane Platform - US$ 260M CAPEX - 20.5% Target IRR',
     type: 'website',
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#2d7a4a',
+  themeColor: '#2d6a4f',
   width: 'device-width',
   initialScale: 1,
 }
@@ -37,8 +44,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className="bg-background">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="pt-BR" className={`${geist.variable} ${geistMono.variable} ${cormorant.variable} bg-background`}>
+      <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
