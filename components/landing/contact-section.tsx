@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { ArrowRight, Calendar, FileText, Mail, Phone, MapPin, Leaf, Linkedin, Send } from "lucide-react"
+import { ArrowRight, Calendar, FileText, Mail, Linkedin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -77,8 +77,12 @@ export function ContactSection() {
                 {card.description}
               </p>
               <Button
-                variant={card.primary ? "secondary" : "outline"}
-                className={card.primary ? '' : 'border-card/30 text-card hover:bg-card/10'}
+                variant="secondary"
+                className={
+                  card.primary
+                    ? undefined
+                    : 'bg-white text-neutral-950 hover:bg-neutral-100 border border-white/25 shadow-xs'
+                }
               >
                 {card.action}
                 <ArrowRight className="ml-2 w-4 h-4" />
@@ -126,24 +130,9 @@ export function ContactSection() {
         >
           <div>
             <h3 className="text-lg font-semibold text-card mb-6">Invest Mato Grosso</h3>
-            <p className="text-card/70 mb-6">
+            <p className="text-card/70">
               Agência de Promoção de Investimentos do Estado de Mato Grosso — Facilitadora institucional do projeto VERDA BIOMETHANE.
             </p>
-            
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 text-card/70">
-                <MapPin className="w-5 h-5 text-primary" />
-                <span>Cuiabá, Mato Grosso — Brasil</span>
-              </div>
-              <div className="flex items-center gap-3 text-card/70">
-                <Mail className="w-5 h-5 text-primary" />
-                <span>invest@mt.gov.br</span>
-              </div>
-              <div className="flex items-center gap-3 text-card/70">
-                <Phone className="w-5 h-5 text-primary" />
-                <span>+55 65 3613-0000</span>
-              </div>
-            </div>
           </div>
           
           <div>
@@ -178,30 +167,39 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <Leaf className="w-6 h-6 text-primary-foreground" />
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%201-fjscPXRjdwjssya31kGsYZaIqNYdZU.png"
+              alt="VERDA BIOMETHANE"
+              className="w-12 h-12 object-contain shrink-0"
+              width={48}
+              height={48}
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-card tracking-tight leading-none">VERDA</span>
+              <span className="text-[10px] font-medium text-sky-400 tracking-widest">BIOMETHANE</span>
             </div>
-            <span className="text-xl font-semibold text-card">VERDA BIOMETHANE</span>
           </div>
-          
-          <div className="flex items-center gap-8 text-sm text-card/60">
-            <span>Versão 1.0 • Maio 2026</span>
-            <span>•</span>
-            <span>Documento Confidencial</span>
+
+          <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
+            <a
+              href="/docs/resumo-executivo-1-investe-mais-estados-verda.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-primary hover:text-primary/90 transition-colors"
+            >
+              <FileText className="w-4 h-4 shrink-0" aria-hidden />
+              Resumo Executivo 1
+            </a>
+            <a
+              href="/docs/verda-biomethane-investment-memorandum.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-primary hover:text-primary/90 transition-colors"
+            >
+              <FileText className="w-4 h-4 shrink-0" aria-hidden />
+              Memorandum
+            </a>
           </div>
-          
-          <div className="flex items-center gap-4 text-sm text-card/60">
-            <a href="#" className="hover:text-card transition-colors">Termos</a>
-            <a href="#" className="hover:text-card transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-card transition-colors">NDA</a>
-          </div>
-        </div>
-        
-        <div className="mt-8 pt-8 border-t border-card/10 text-center">
-          <p className="text-xs text-card/50">
-            Este documento é confidencial e destinado exclusivamente a investidores institucionais qualificados sob acordo de confidencialidade (NDA).
-            A Invest Mato Grosso atua exclusivamente como facilitadora institucional, sem participação societária ou aporte de capital.
-          </p>
         </div>
       </div>
     </footer>

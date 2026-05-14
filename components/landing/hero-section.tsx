@@ -7,13 +7,19 @@ import { Button } from "@/components/ui/button"
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background video */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-bg.jpg"
-          alt="VERDA BIOMETHANE - Campos agrícolas e planta de biometano"
+        <video
           className="w-full h-full object-cover"
-        />
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/50 to-foreground/80" />
       </div>
 
@@ -81,7 +87,9 @@ export function HeroSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-medium text-card max-w-5xl leading-tight tracking-tight"
         >
           <span className="text-balance">A Maior Plataforma de Biometano da</span>{" "}
-          <span className="text-primary">América Latina</span>
+          <span className="text-card font-serif italic font-bold tracking-tight inline-block text-5xl md:text-7xl lg:text-8xl leading-[1.05] [text-shadow:0_1px_24px_rgba(0,0,0,0.35)]">
+            América Latina
+          </span>
         </motion.h1>
 
         <motion.p
