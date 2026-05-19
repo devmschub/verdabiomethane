@@ -1,3 +1,4 @@
+import { LandingNavbar } from "@/components/landing/landing-navbar"
 import { HeroSection } from "@/components/landing/hero-section"
 import { OpportunitySection } from "@/components/landing/opportunity-section"
 import { FinancialSection } from "@/components/landing/financial-section"
@@ -9,6 +10,7 @@ import { ContactSection, Footer } from "@/components/landing/contact-section"
 export default function VerdaBiomethaneLanding() {
   return (
     <main className="min-h-screen">
+      <LandingNavbar />
       <HeroSection />
       <OpportunitySection />
       <PartnersSection />

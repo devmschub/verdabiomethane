@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Cormorant_Garamond } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { AppProviders } from '@/components/providers/app-providers'
 import './globals.css'
 
 const geist = Geist({ 
@@ -44,9 +45,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${geist.variable} ${geistMono.variable} ${cormorant.variable} bg-background`}>
+    <html lang="pt-BR" suppressHydrationWarning className={`${geist.variable} ${geistMono.variable} ${cormorant.variable} bg-background`}>
       <body className="font-sans antialiased">
-        {children}
+        <AppProviders>{children}</AppProviders>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
